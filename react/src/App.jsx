@@ -7,7 +7,7 @@ import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
 import Resume from './pages/Resume';
 
-const App = () =(
+const App = () => (
   <Router>
     <Header />
     <main>
