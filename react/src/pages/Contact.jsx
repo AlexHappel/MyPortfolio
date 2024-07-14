@@ -39,6 +39,7 @@ const Contact = () => {
                 </div>
                 <button type="submit">Submit</button>
             </form>
+            <p>Email: Alex.Happel90@gmail.com</p>
         </section>
     );
 };
