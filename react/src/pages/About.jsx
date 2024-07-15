@@ -3,8 +3,10 @@ import DeveloperInfo from '../components/DeveloperInfo';
 
 const About = () => (
     <section>
-        <DeveloperInfo imageUrl={null} /> {/* Update imageUrl with the real image path when available */}
-        <p>Short bio about the developer.</p>
+        <DeveloperInfo
+            imageUrl={null}
+            bio="A short bio about the developer goes here."
+        />
     </section>
 );
 
