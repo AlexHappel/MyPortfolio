@@ -2,7 +2,7 @@
     "name": "fullstack-portfolio",
     "version": "1.0.0",
     "scripts": {
-      "build": "npm run build",
+      "build": "cd react && npm run build",
       "start": "concurrently \"npm run start:backend\" \"npm run start:react\"",
       "start:backend": "cd backend && node server.js",
       "start:react": "cd react && npm run dev"
