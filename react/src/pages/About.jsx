@@ -1,10 +1,10 @@
 import React from 'react';
+import DeveloperInfo from '../components/DeveloperInfo';
 
 const About = () => (
     <section>
-        <h2>About Me</h2>
-        <img src="/path-to-my-photo.jpg" alt="Alexander Happel" />
-        <p>This is where im going to put my short biography.</p>
+        <DeveloperInfo imageUrl={null} /> {/* Update imageUrl with the real image path when available */}
+        <p>Short bio about the developer.</p>
     </section>
 );
 

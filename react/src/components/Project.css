@@ -1,0 +1,43 @@
+.project-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px; /* Reduce padding */
+    margin-bottom: 16px;
+    text-align: left; /* Align content to the left */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition for hover effect */
+  }
+  
+  .project-box:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Highlight on hover */
+    border-color: #007bff; /* Change border color on hover */
+  }
+  
+  .project-title {
+    margin-bottom: 8px;
+  }
+  
+  .project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 12px; /* Reduce margin */
+  }
+  
+  .project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .project-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .project-link:hover {
+    text-decoration: underline;
+  }

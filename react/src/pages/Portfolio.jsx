@@ -1,34 +1,31 @@
 import React from 'react';
+import Project from '../components/Project';
+import './Portfolio.css';
 
 const projects = [
     {
-    title: 'Project 1',
+    title: 'The Mood Bar',
     imageUrl: '/path-to-project1-image.jpg',
-    deployUrl: 'https://deploy-link1.com',
-    repoUrl: 'https://github.com/username/project1',
+    repoUrl: 'https://github.com/AlexHappel/TheMoodBar',
     },
     {
-    title: 'Project 2',
+    title: 'Zazzled',
     imageUrl: '/path-to-project1-image.jpg',
-    deployUrl: 'https://deploy-link1.com',
-    repoUrl: 'https://github.com/username/project1',
+    repoUrl: 'https://github.com/AlexHappel/Cocktail-Directory',
     },
     {
-    title: 'Project 3',
+    title: 'P2Omnissiah',
     imageUrl: '/path-to-project1-image.jpg',
-    deployUrl: 'https://deploy-link1.com',
-    repoUrl: 'https://github.com/username/project1',
+    repoUrl: 'https://github.com/AlexHappel/P2Omnissiah',
     },
     {
     title: 'Project 4',
     imageUrl: '/path-to-project1-image.jpg',
-    deployUrl: 'https://deploy-link1.com',
     repoUrl: 'https://github.com/username/project1',
     },
     {
     title: 'Project 5',
     imageUrl: '/path-to-project1-image.jpg',
-    deployUrl: 'https://deploy-link1.com',
     repoUrl: 'https://github.com/username/project1',
     },
 

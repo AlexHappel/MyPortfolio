@@ -1,15 +1,24 @@
 import React from 'react';
+import './Resume.css';
 
 const Resume = () => (
-    <section>
-        <h2>Resume</h2>
-        <a href="/path-to-resume.pdf" download>Download Resume</a>
-        <ul>
-            <li>Proficiency 1</li>
-            <li>Proficiency 2</li>
-            <li>Proficiency 3</li>
+    <div className="resume-container">
+        <div className="resume-content">
+            <h2>Resume</h2>
+            <p>Download my resume <a href="/path-to-resume.pdf" download>here</a>.</p>
+            <h3>Proficiencies</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MongoDB</li>
+                <li>SQL</li>
             </ul>
-    </section>
+        </div>
+    </div>
 );
 
 export default Resume;
