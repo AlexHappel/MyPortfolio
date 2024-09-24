@@ -9,7 +9,12 @@ const formRoutes = require('./routes/formRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://main--warm-hummingbird-e26af3.netlify.app',
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.use('/api/forms', formRoutes);
