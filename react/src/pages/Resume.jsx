@@ -16,7 +16,7 @@ const Resume = () => (
                 <li>React</li>
                 <li>Node.js</li>
                 <li>SQL</li>
-                <li>NOSQL</li>
+                <li>NoSQL</li>
             </ul>
         </div>
     </div>
