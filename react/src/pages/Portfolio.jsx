@@ -30,7 +30,7 @@ const projects = [
     {
     title: 'Whiskey Reclusiam',
     imageUrl: '/src/images/Work-in-Progress.jpg',
-    deployUrl: "",
+    deployUrl: '',
     repoUrl: 'https://github.com/AlexHappel/Whiskey',
     },
 
