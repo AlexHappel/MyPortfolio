@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
-  origin: 'https://alexhappel.netlify.app',
+  origin: /https:\/\/.*\.netlify\.app$/,
   optionsSuccessStatus: 200,
 };
 
