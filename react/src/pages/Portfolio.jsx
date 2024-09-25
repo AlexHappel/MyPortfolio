@@ -5,28 +5,33 @@ import './Portfolio.css';
 const projects = [
     {
     title: 'The Mood Bar',
-    imageUrl: '/path-to-project1-image.jpg',
+    imageUrl: '/src/images/the mood bar.PNG',
+    deployUrl: "https://eddiehinojosa.github.io/TheMoodBar/",
     repoUrl: 'https://github.com/AlexHappel/TheMoodBar',
     },
     {
     title: 'Zazzled',
-    imageUrl: '/path-to-project1-image.jpg',
+    imageUrl: '/src/images/zozzled.PNG',
+    deployUrl: "https://zozzled.onrender.com",
     repoUrl: 'https://github.com/AlexHappel/Cocktail-Directory',
     },
     {
     title: 'P2Omnissiah',
-    imageUrl: '/path-to-project1-image.jpg',
+    imageUrl: '/src/images/P2omnissiah.PNG',
+    deployUrl: "https://p2omnissiah.onrender.com",
     repoUrl: 'https://github.com/AlexHappel/P2Omnissiah',
     },
     {
-    title: 'Project 4',
-    imageUrl: '/path-to-project1-image.jpg',
-    repoUrl: 'https://github.com/username/project1',
+    title: 'Agora',
+    imageUrl: '/src/images/Agora.PNG',
+    deployUrl: "https://agora-crafts.onrender.com/",
+    repoUrl: 'https://github.com/AlexHappel/Agora',
     },
     {
-    title: 'Project 5',
-    imageUrl: '/path-to-project1-image.jpg',
-    repoUrl: 'https://github.com/username/project1',
+    title: 'Whiskey Reclusiam',
+    imageUrl: '/src/images/Work-in-Progress.jpg',
+    deployUrl: "",
+    repoUrl: 'https://github.com/AlexHappel/Whiskey',
     },
 
 ];

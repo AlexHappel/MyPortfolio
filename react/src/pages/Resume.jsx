@@ -11,11 +11,12 @@ const Resume = () => (
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
+                <li>MongoDB</li>
+                <li>Express.jsNode.js</li>
                 <li>React</li>
                 <li>Node.js</li>
-                <li>Express.js</li>
-                <li>MongoDB</li>
                 <li>SQL</li>
+                <li>NOSQL</li>
             </ul>
         </div>
     </div>
