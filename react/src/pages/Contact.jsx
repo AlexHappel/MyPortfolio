@@ -18,16 +18,6 @@ const Contact = () => {
 
 const onSubmit = async (data) => {
     try {
-        const response = await fetch(process.env.REACT_APP_API_URL, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data),
-        });
-
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status}`);
-        }
-
         const result = await response.json();
         console.log('API Response:', result);
         setSuccessMessage('Thank you for reaching out! Alexander will get back to you promptly.');
@@ -43,23 +33,20 @@ const onSubmit = async (data) => {
             {successMessage ? (
                 <p className="success-message">{successMessage}</p>
             ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
-            <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input id="name" {...register('name')} className={`form-control ${errors.name ? 'is-invalid' : ''}`} />
-                {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
-            </div>
-            <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input id="email" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
-                {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
-            </div>
-            <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" {...register('message')} className={`form-control ${errors.message ? 'is-invalid' : ''}`} />
-                {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+                <form name="contact" method="POST" data-netlify="true" className="contact-form">
+                <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input id="name" name="name" type="text" />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input id="email" name="email" type="email" />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </form>
         )}
         <div className="contact-info">
