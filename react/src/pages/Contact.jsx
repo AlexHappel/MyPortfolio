@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -11,48 +11,66 @@ const schema = yup.object().shape({
 });
 
 const Contact = () => {
-    const [successMessage, setSuccessMessage] = useState('');
     const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: yupResolver(schema),
-});
+        resolver: yupResolver(schema),
+    });
 
-const onSubmit = async (data) => {
-    try {
-        const result = await response.json();
-        console.log('API Response:', result);
-        setSuccessMessage('Thank you for reaching out! Alexander will get back to you promptly.');
-    } catch (error) {
-        console.error('Error submitting form:', error);
-        alert('Error submitting form');
-    }
-};
+    const onSubmit = (data) => {};
 
     return (
         <section className="contact-section">
             <h2>Contact</h2>
-            {successMessage ? (
-                <p className="success-message">{successMessage}</p>
-            ) : (
-                <form name="contact" method="POST" data-netlify="true" className="contact-form">
+            <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                onSubmit={handleSubmit(onSubmit)}
+                className="contact-form"
+                action="/thank-you"
+            >
+                <input type="hidden" name="form-name" value="contact" />
+
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
-                    <input id="name" name="name" type="text" />
+                    <input 
+                        id="name" 
+                        name="name" 
+                        type="text" 
+                        {...register('name')} 
+                        className={errors.name ? 'is-invalid' : ''}
+                    />
+                    {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
                 </div>
+                
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input id="email" name="email" type="email" />
+                    <input 
+                        id="email" 
+                        name="email" 
+                        type="email" 
+                        {...register('email')} 
+                        className={errors.email ? 'is-invalid' : ''}
+                    />
+                    {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
                 </div>
+                
                 <div className="form-group">
                     <label htmlFor="message">Message</label>
-                    <textarea id="message" name="message"></textarea>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        {...register('message')} 
+                        className={errors.message ? 'is-invalid' : ''}
+                    ></textarea>
+                    {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
                 </div>
+                
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
-        )}
-        <div className="contact-info">
-            <p>Email: Alex.Happel90@gmail.com</p>
-            <p>Phone: (321) 947-0599</p>
-        </div>
+            <div className="contact-info">
+                <p>Email: Alex.Happel90@gmail.com</p>
+                <p>Phone: (321) 947-0599</p>
+            </div>
         </section>
     );
 };
