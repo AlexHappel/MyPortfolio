@@ -21,7 +21,7 @@ exports.handler = async (event) => {
         const { name, email, message } = data;
 
         const client = await connectToDatabase();
-        const db = client.db('portfolio');
+        const db = client.db('Portfolio');
         const collection = db.collection('formsubmissions');
 
         await collection.insertOne({ name, email, message, submittedAt: new Date() });
