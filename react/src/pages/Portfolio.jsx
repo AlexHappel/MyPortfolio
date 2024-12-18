@@ -10,7 +10,7 @@ const projects = [
     repoUrl: 'https://github.com/AlexHappel/TheMoodBar',
     },
     {
-    title: 'Zazzled',
+    title: 'Zozzled',
     imageUrl: '/src/images/zozzled.PNG',
     deployUrl: "https://zozzled.onrender.com",
     repoUrl: 'https://github.com/AlexHappel/Cocktail-Directory',

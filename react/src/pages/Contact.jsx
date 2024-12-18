@@ -16,20 +16,23 @@ const Contact = () => {
     resolver: yupResolver(schema),
 });
 
-    const onSubmit = async (data) => {
-        try {
-            const response = await fetch('${process.env.REACT_APP_API_URL}', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json',},
-                body: JSON.stringify(data),
+const onSubmit = async (data) => {
+    try {
+        const response = await fetch(process.env.REACT_APP_API_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data),
         });
-    const result = await response.json();
-        if (response.ok) {
-            setSuccessMessage('Thank you for reaching out! Alexander will get back to you promptly.');
-        } else {
-            alert('Error submitting form');
+
+        if (!response.ok) {
+            throw new Error(`Error: ${response.status}`);
         }
+
+        const result = await response.json();
+        console.log('API Response:', result);
+        setSuccessMessage('Thank you for reaching out! Alexander will get back to you promptly.');
     } catch (error) {
+        console.error('Error submitting form:', error);
         alert('Error submitting form');
     }
 };
