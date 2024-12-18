@@ -15,25 +15,30 @@ const Contact = () => {
         resolver: yupResolver(schema),
     });
 
-    // This function runs validation. If valid, it triggers actual form submission.
-    const validateAndSubmit = handleSubmit(() => {
-        // If we reach here, form is valid. Now submit natively to Netlify.
-        document.getElementById('contact-form').submit();
-    });
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('/.netlify/functions/formSubmit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error(`Error: ${response.statusText}`);
+            }
+
+            // If successful, redirect to thank-you page
+            window.location.href = '/thank-you';
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('There was an error submitting the form. Please try again later.');
+        }
+    };
 
     return (
         <section className="contact-section">
             <h2>Contact</h2>
-            <form
-                id="contact-form"
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                className="contact-form"
-            >
-                
-                <input type="hidden" name="form-name" value="contact" />
-
+            <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
                     <input
@@ -66,7 +71,7 @@ const Contact = () => {
                     {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
                 </div>
 
-                <button type="button" className="btn btn-primary" onClick={validateAndSubmit}>
+                <button type="submit" className="btn btn-primary">
                     Submit
                 </button>
             </form>
