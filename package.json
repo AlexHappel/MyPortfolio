@@ -2,12 +2,15 @@
     "name": "fullstack-portfolio",
     "version": "1.0.0",
     "scripts": {
-      "start": "concurrently \"npm run start:backend\" \"npm run start:react\"",
-      "start:backend": "cd backend && node server.js",
-      "start:react": "cd react && npm run dev",
-      "build": "cd react && npm install && npm run build"
+        "start": "concurrently \"npm run start:backend\" \"npm run start:react\"",
+        "start:backend": "cd backend && node server.js",
+        "start:react": "cd react && npm run dev",
+        "build": "cd react && npm install && npm run build"
     },
     "devDependencies": {
-      "concurrently": "^7.0.0"
+        "concurrently": "^7.0.0"
+    },
+    "dependencies": {
+        "mongodb": "^6.12.0"
     }
-  }
+}
