@@ -1,5 +1,5 @@
 const { MongoClient } = require('mongodb');
-const FormSubmission = require('../../backend/models/formSubmission');
+const FormSubmission = require('../../models/formSubmission');
 require('dotenv').config();
 
 let cachedClient = null;
